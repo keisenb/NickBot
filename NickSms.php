@@ -7,7 +7,6 @@ $token = "twilio token";
 $client = new Client($sid, $token);
 $twilio = "twilio number";
 
-
 $number = $_POST['From'];
 $body = $_POST['Body'];
 $text = strtolower($body);
@@ -20,12 +19,20 @@ header('Content-Type: text/xml');
    <?php
    if ($text == "yes" || $text == "yes!" || $text == "nick" || $text == "yeah"){
 
-     shell_exec("/var/www/kyle-eisenbarger.com/public_html/scripts/nick.sh");
-
-     echo "<Message>Nick has told his dad joke today!</Message>";
-   }
-   else {
+     shell_exec('curl http://hasnicktoldhisdadjoketoday.com/updateyes');
+  }
+   else if($text == "admin") {
+     shell_exec('curl http://hasnicktoldhisdadjoketoday.com/updateno/jakeihatethatyoumademeaddthis');
+   } else {
      echo "<Message>Hey ".$number."! You sent ".$body.". You should send the word 'Yes' to update the site!</Message>";
    }
+
+
+    $response = shell_exec('curl http://hasnicktoldhisdadjoketoday.com/api/isyes');
+      if($response == "YES") {
+         echo "<Message>Nick has told his dad joke today!</Message>";
+      } else {
+        echo "<Message>Sorry try again.</Message>";
+      }
    ?>
 </Response>
