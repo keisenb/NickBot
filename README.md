@@ -1,9 +1,14 @@
 # NickBot
 A Twilio Bot that updates hasnicktoldhisdadjoketoday.com
 
-## Motivation
+## Function
 
-This allows users to text the twilio phone number to easily let other users who check the site know that Nick has told his dad joke today.
+This webhook allows users to text a twilio phone number to easily let other users who check the site know that Nick has told his dad joke today. 
+
+Current Abilities:
+  Text it "yes" to update the site
+  Text it "check" to check if a joke has been told today
+  Text it "admin" to reset the page for debugging purposes.
 
 ## License
 
