@@ -7,6 +7,8 @@ $token = "twilio token";
 $client = new Client($sid, $token);
 $twilio = "twilio number";
 
+
+
 $number = $_POST['From'];
 $body = $_POST['Body'];
 $text = strtolower($body);
@@ -20,9 +22,13 @@ header('Content-Type: text/xml');
    if ($text == "yes" || $text == "yes!" || $text == "nick" || $text == "yeah"){
 
      shell_exec('curl http://hasnicktoldhisdadjoketoday.com/updateyes');
-  }
-   else if($text == "admin") {
+   }
+    else if($text == "admin") {
      shell_exec('curl http://hasnicktoldhisdadjoketoday.com/updateno/jakeihatethatyoumademeaddthis');
+   }
+    else if($text == "check" || $text == "?") {
+       //do nothing here.
+
    } else {
      echo "<Message>Hey ".$number."! You sent ".$body.". You should send the word 'Yes' to update the site!</Message>";
    }
