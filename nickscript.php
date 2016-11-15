@@ -38,6 +38,11 @@ if ($result == "YES") {
             'body' => "Nick has told his dad joke today."
         ));
     }
+    //sleep till midnight
+    $current = time();
+    $midnight = strtotime('tomorrow 00:00:00');
+    $result = floor($midnight - $current);
+    sleep($result);
 }
 
 $db->close();
