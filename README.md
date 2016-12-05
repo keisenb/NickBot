@@ -1,5 +1,5 @@
 # NickBot
-A Twilio webhook that integrates with hasnicktoldhisdadjoketoday.com
+A Twilio webhook that integrates with hasit.io
 
 ## Function
 
@@ -15,9 +15,9 @@ Current Abilities:
 
 ## Usage
 
-Please feel free to modify this for your own use. You can edit the config file and input your information there to use your own mysql database as well as Twilio account. You can also change the site to curl in the nickscript or sms files.
+Please feel free to modify this for your own use. You can edit the config file and input your information there to use your own mysql database as well as Twilio account.
 
-The master branch is the original working product, feel free to check the 'hasit' branch for a newer version to be integrated with hasit.io!
+The master branch is the original working product, feel free to check it out for the original version.
 
 ## License
 
